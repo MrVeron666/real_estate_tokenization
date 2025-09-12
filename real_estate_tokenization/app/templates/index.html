@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tokenized Real Estate</title>
+    <script src="https://cdn.jsdelivr.net/npm/@solana/web3.js@1.30.2/lib/index.iife.min.js"></script>
+</head>
+<body>
+    <h1>Tokenized Real Estate</h1>
+    <button onclick="connectWallet()">Connect Wallet</button>
+
+    <script>
+        const provider = window.phantom?.solana;
+
+        async function connectWallet() {
+            if (!provider) {
+                alert("Phantom not found!");
+                return;
+            }
+
+            try {
+                const resp = await provider.connect();
+                console.log("Connected to wallet:", resp.publicKey.toString());
+                alert("Wallet connected: " + resp.publicKey.toString());
+            } catch (err) {
+                console.error("Wallet connection error:", err);
+            }
+        }
+    </script>
+</body>
+</html>
