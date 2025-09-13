@@ -1,2 +1,12 @@
 [programs.localnet]
-real_estate = "programs/real_estate"
+real_estate_tokenization = "target/deploy/real_estate_tokenization.so"
+
+[registry]
+url = "https://api.apr.dev"
+
+[provider]
+cluster = "localnet"
+wallet = "~/.config/solana/id.json"
+
+[scripts]
+test = "anchor test"
